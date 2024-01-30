@@ -1,0 +1,56 @@
+:root{
+    --bg-color:#6C757D;
+    --banner-color:#212529;
+    --seasalt-color:#F8F9FA;
+}
+html{
+    font-family:'Courier New', Courier, monospace;;
+    font-weight: 300;
+    color: var(--seasalt-color);
+}
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    background-color: var(--bg-color);
+}
+
+nav{
+    background-color: red;
+}
+
+nav,.nav-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px green;
+    list-style-type: none;
+}
+
+.nav-menu{
+    justify-content: space-between;
+    column-gap: 10px;
+}
+
+.link-containers a {
+    display: grid;
+    justify-content: center;
+}
+
+
+#nav-login a{
+    background-color: aqua;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#login-icon{
+    width: 20px;
+}
+
