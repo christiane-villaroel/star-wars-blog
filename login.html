@@ -10,17 +10,20 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 
-        <title>Star Wars Blog</title>
+        <title>Login</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
-    <body>
+    <body id="login-body" >
         <header class="banner">
             <h1>Star Wars Fan Blog</h1>
         </header>
         <nav>
+<!--             <span id="nav-login jura" >
+                
+            </span> -->
             <ul class="nav-menu">
                 <li id="nav-login" class="link-containers jura">
-                    <a href="login.html"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
+                    <a href="#"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
                 </li>
                 <li class="link-containers jura">
                     <a href="#">Home</a>
@@ -36,23 +39,24 @@
                 </li>
             </ul>
         </nav>
-        <main>
-            <div>
-                <h2 class="days one">Welcome</h2>
-                <p class="jura">
-                    <strong>Star Wars Fan Blog</strong> is you're one stop to up to date Star Wars news.
-                    We have all things related to a Galaxy Far Far away! 
-                </p>
+        <main class="login-main">
+            <div class="form-container" id="logged-in" name="loginForm">
+                <form method="post" onsubmit="validate()">
+                    <h2 class="jura">Login</h2>
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" minlength="8" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" minlength="10" required>
+                    </div>
+                    <div>
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
             </div>
         </main>
-        <aside>
-            <h5>Articles</h5>
-            <ul>
-                <li>Article 1</li>
-                <li>Article 2</li>
-                <li>Article 3</li>
-            </ul>
-        </aside>
         <footer>
             <small class="copyright jura">
                 &copy; Copyright Christiane Villaroel

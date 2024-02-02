@@ -1,7 +1,9 @@
 :root{
     --bg-color:#6C757D;
     --banner-color:#212529;
+    --banner-text-color:#ffd60a;
     --seasalt-color:#F8F9FA;
+    
 }
 html{
     font-family:'Courier New', Courier, monospace;;
@@ -14,34 +16,84 @@ body{
     margin: 0px;
     background-color: var(--bg-color);
 }
-
+h1,h2, h3{
+    text-align: center;
+}
+/* CSS Grid */
+body{
+    display: grid;
+    grid-template-columns: 10px 3fr 1fr 10px;
+    grid-template-rows: 100px 70px 4fr 70px;
+    grid-template-areas: 
+        "banner banner banner banner"
+        "nav nav nav nav"
+        ". main aside ."
+        "footer footer footer footer"
+    ;
+}
+.banner{
+    grid-area: banner;
+}
 nav{
-    background-color: red;
+    grid-area: nav;
+}
+main{
+    grid-area: main;
+}
+aside{
+    grid-area: aside;
+}
+footer{
+    grid-area: footer;
+}
+/* fonts */
+
+.jura{
+  font-family: "Jura", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
+/* Header */
+.banner{
+    background-color: var(--banner-color);
+    color: var(--banner-text-color);
+}
+.banner h1 {
+    /* Google fonts css code */
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-style: normal;  
+}
+/* Nav */
+nav{
+    background-color: var(--banner-color);
+    border-top: var(--seasalt-color) solid 1px;
+    border-bottom: var(--seasalt-color) solid 1px;
+}
 nav,.nav-menu{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: solid 2px green;
     list-style-type: none;
 }
 
-.nav-menu{
-    justify-content: space-between;
+nav .nav-menu{
+    justify-content: space-evenly;
     column-gap: 10px;
+    width: 89%;
 }
 
 .link-containers a {
     display: grid;
     justify-content: center;
+    color: red;
 }
 
 
 #nav-login a{
-    background-color: aqua;
-    color: black;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -54,3 +106,32 @@ nav,.nav-menu{
     width: 20px;
 }
 
+/* main section */
+
+
+
+/* side bar */
+
+/* footer */
+
+footer{
+    background-color: var(--banner-color);
+    display: flex;
+    flex-direction: column;
+
+}
+.copyright{
+    align-self: center;
+}
+
+/* login page */
+
+/* body */
+#login-body{
+grid-template-areas: 
+    "banner banner banner banner"
+    "nav nav nav nav"
+    ". main main ."
+    "footer footer footer footer"
+;
+}
