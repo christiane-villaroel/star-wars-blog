@@ -26,7 +26,7 @@ This repo is part of my MAC 172: Web Development Course from LaGuardia Community
 - Styling: selecting font styling to us through out website, used color generator to pick color themes for site.
 - Source List created to keep track of online resources used throughout duration of project
 
-## 2/2/23 -Summary:
+## 2/2/24 -Summary:
 - [SW Codpen Inspiration](https://codepen.io/RobinKWilliams/pen/yJLMqV)
  - > The link above is the inspiration for the font styling for my project
  - > Here is where I got the SW font stylings listed below:
@@ -54,3 +54,13 @@ source : [Jura Font](https://fonts.google.com/selection/embed)
 ##### Login Page:
 - Started login page
 - need to complete validation in JS
+
+## 2/4/24 -Summary:
+
+##### Login Page:
+- JS Validate function create for Password and username
+
+##### Post's Page:
+- create html Post page:
+  - Gathered free stock photos to use for blog posts list from [Pexels.com](https://www.pexels.com/search/star%20wars/)
+  - Dummy text used for post text: [Star Wars Ipsum](https://nerfherderipsum.com/)

@@ -47,6 +47,11 @@ footer{
     grid-area: footer;
 }
 /* fonts */
+.days-one{
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+}
 
 .jura{
   font-family: "Jura", sans-serif;
@@ -107,7 +112,14 @@ nav .nav-menu{
 }
 
 /* main section */
-
+.main-content-container{
+    background-color: var(--seasalt-color);
+    box-shadow:black 0px 19px 38px, black 0px 15px 12px;
+    color: var(--banner-color);
+    width: 85%;
+    padding: 10px;
+    margin-top: 10px;
+}
 
 
 /* side bar */
@@ -118,11 +130,14 @@ footer{
     background-color: var(--banner-color);
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
 }
 .copyright{
     align-self: center;
 }
+/* home page */
+
+
 
 /* login page */
 
@@ -135,3 +150,106 @@ grid-template-areas:
     "footer footer footer footer"
 ;
 }
+
+.form-container{
+    width: 80%;
+    margin: auto;
+}
+.form-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+/* POST's Page */
+#posts-body{
+    grid-template-areas: 
+        "banner banner banner banner"
+        "nav nav nav nav"
+        ". main main ."
+        "footer footer footer footer"
+    ;
+}
+
+.blogs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--bg-color);
+}
+a.blogs{
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    color: var(--banner-color);
+    box-shadow: 10px 10px 2px 1px black;
+
+    margin-bottom: 10px;
+}
+.blogs .posts-img{
+    width: 30%;
+    max-width: 150px;
+    height: 150px;
+    align-self: center;
+}
+.blogs div{
+    width: 40%;
+    height: 200px;
+}
+.blog-text{
+    padding: 10px;
+    text-align: center;
+}
+.blog-lists-link:hover{
+    cursor: pointer;
+}
+
+/* Blogs HTML */
+#blogs-body{
+    grid-template-areas: 
+    "banner banner banner banner"
+    "nav nav nav nav"
+    "main main aside aside"
+    "footer footer footer footer";
+}
+aside{
+    grid-area: aside;
+}
+#articles-sidebar{
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.articles{
+    display: inherit;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.aside-img{
+    width: 90%;
+    max-width: 200px;
+}
+#blog-container{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.blogs-img{
+   width: 250px;
+   height: 200px;
+    max-width: 300px;
+    max-height: 300px;
+}
+.articles{
+    border: solid black 1px;
+}
+h6{
+    text-align: center;
+    margin: 0px;
+}
+

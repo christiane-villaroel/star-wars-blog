@@ -18,41 +18,33 @@
             <h1>Star Wars Fan Blog</h1>
         </header>
         <nav>
-<!--             <span id="nav-login jura" >
-                
-            </span> -->
             <ul class="nav-menu">
                 <li id="nav-login" class="link-containers jura">
                     <a href="#"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
                 </li>
                 <li class="link-containers jura">
-                    <a href="#">Home</a>
+                    <a href="home.html">Home</a>
                 </li>
                 <li class="link-containers jura">
-                    <a href="">News</a>
-                </li>
-                <li class="link-containers jura">
-                    <a href="">Posts</a>
-                </li>
-                <li class ="link-containers jura">
-                    <a href="">Star Wars <br> Community Events</a>
+                    <a href="posts.html">Posts</a>
                 </li>
             </ul>
         </nav>
         <main class="login-main">
-            <div class="form-container" id="logged-in" name="loginForm">
-                <form method="post" onsubmit="validate()">
-                    <h2 class="jura">Login</h2>
+            <div class="form-container jura" id="logged-in">
+                <form method="post" onsubmit="return validate()" name="loginForm">
+                    <h2 class="days-one">Login</h2>
                     <div>
                         <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" minlength="8" required>
+                        <input type="text" id="username" name="username" autocomplete="off">
                     </div>
                     <div>
                         <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" minlength="10" required>
+                        <input type="password" id="password" name="password" autocomplete="off">
+                        <p id="password-length"><i>Passwords must be 8 characters or more</i></p>
                     </div>
                     <div>
-                        <button type="submit">Login</button>
+                        <button type="submit" id="login-btn" value="submit">Login</button>
                     </div>
                 </form>
             </div>

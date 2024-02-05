@@ -1,8 +1,17 @@
+
 function validate (){
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    if(username==""){
-        alert()
+/*     let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value; */
+    if(document.loginForm.username.value==""){
+        alert("Please enter a valid Username");
+        document.loginForm.username.focus();
+        return false;
     }
-    document.getElementById("logged-in").innerHTML =`<h2>Logged In</h2> <br/> ${username}`
-}
+    if(document.loginForm.password.value==""){
+        alert("Please enter a valid Password");
+        document.loginForm.password.focus();
+        return false;
+    }
+    
+    return(true);
+}   
