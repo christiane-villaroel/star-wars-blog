@@ -20,10 +20,10 @@
         <nav>
             <ul class="nav-menu">
                 <li id="nav-login" class="link-containers jura">
-                    <a href="#"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
+                    <a href="login.html"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
                 </li>
                 <li class="link-containers jura">
-                    <a href="sign-up.html" > Sign-Up</a>
+                    <a href="#"> Sign-Up</a>
                 </li>
                 <li class="link-containers jura">
                     <a href="home.html">Home</a>
@@ -35,25 +35,34 @@
         </nav>
         <main class="login-main">
             <div class="form-container jura" id="logged-in">
-                <form method="post" onsubmit="return validate()" name="loginForm">
-                    <h2 class="days-one">Login</h2>
+                <form name="signupForm" id="sign-up-form">
+                    <h2 class="days-one">Sign Up</h2>
                     <div>
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" autocomplete="off">
+                        <label for="new-user">Create Username</label>
+                        <input type="text" id="new-user">
                     </div>
                     <div>
-                        <label for="password">Password:</label>
+                        <label for="email">Email</label>
+                        <input type="text" id="email">
+                    </div>
+                    <div>
+                        <label for="password">Create Password:</label>
                         <input type="password" id="password" name="password" autocomplete="off">
                         <p id="password-length"><i>Passwords must be 8 characters or more</i></p>
                     </div>
                     <div>
-                        <button type="submit" id="login-btn" value="submit">Login</button>
+                        <label for="password">re-enter same password:</label>
+                        <input type="password" id="repeat" name="repeat" autocomplete="off">
+                    </div>
+                    <div class="password-match jura" style="display: none;">
+                        <p>Perfect match</p>
+                    </div>
+                    <div>
+                        <button type="button" id="signup-btn" value="submit" onclick="createAccount()">Sign Up</button>
                     </div>
                 </form>
             </div>
-            <div>
-                <p id="profile"></p>
-            </div>
+            
         </main>
         <footer>
             <small class="copyright jura">
