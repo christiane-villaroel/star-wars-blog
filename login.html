@@ -35,7 +35,7 @@
         </nav>
         <main class="login-main">
             <div class="form-container jura" id="logged-in">
-                <form method="post" onsubmit="return validate()" name="loginForm">
+                <form name="loginForm">
                     <h2 class="days-one">Login</h2>
                     <div>
                         <label for="username">Username:</label>
@@ -47,7 +47,7 @@
                         <p id="password-length"><i>Passwords must be 8 characters or more</i></p>
                     </div>
                     <div>
-                        <button type="submit" id="login-btn" value="submit">Login</button>
+                        <button type="submit" id="login-btn" value="button" onclick="validate()">Login</button>
                     </div>
                 </form>
             </div>

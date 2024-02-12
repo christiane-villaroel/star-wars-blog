@@ -37,7 +37,7 @@
            <div id="blog-container" class="main-content-container">
                 <h2 class="days-one">Star Wars Galaxy Edge Review</h2>
                 <img class="blogs-img" src="/img/first-order-trooper.jpg" alt="first order trooper">
-                <div>
+                <div id="article-content-container">
                  <p class="jura">
                     Jyn erso jedi qui-gon jinn luke skywalker protocol r2-d2 lando calrissian kanan jarrus.
                     Outer rim qui-gon jinn droid the force mace windu hera syndulla sith darth vader. Galactic
@@ -65,17 +65,28 @@
             </div>
            </div>
         </main>
+        <div class="comments jura">
+            <div id="comment-section">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci rem, repudiandae delectus consequuntur culpa accusantium, nesciunt, illum eveniet deserunt odit praesentium placeat recusandae ipsa aliquam blanditiis aperiam dolores laborum.</p>
+            </div>
+            <div>
+                <form name="commentForm">
+                    <textarea id="textArea" placeholder="type comment here"></textarea>
+                    <button type="button" id="comment-btn" onclick="comments()">Post Comment</button>
+                </form>
+            </div>
+        </div>
         <aside id="articles-sidebar">
             <h5>More To Read</h5>
-            <section class="articles">
+            <section class="articles one">
                 <img class="aside-img" src="/img/sw-legos.jpg" alt="Lego Star Wars Set">
                 <h6>Best Lego Star Wars Collection</h6>
             </section>
-            <section class="articles">
+            <section class="articles two" >
                 <img class="aside-img" src="/img/vador-helmet.jpg" alt="Darth Vador Helmet">
                 <h6>Original Vador Helmet Found</h6>
             </section>
-            <section class="articles">
+            <section class="articles three">
                 <img class="aside-img" src="/img/first-order-trooper.jpg" alt="frist order trooper">
                 <h6>Star Wars Galaxy Edge Review</h6>
             </section>
@@ -85,7 +96,7 @@
                 &copy; Copyright Christiane Villaroel
             </small>
         </footer>
-        <script src="scripts.js">
+        <script src="/scripts.js">
 
         </script>
     </body>

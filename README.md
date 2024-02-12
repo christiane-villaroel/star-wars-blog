@@ -64,3 +64,8 @@ source : [Jura Font](https://fonts.google.com/selection/embed)
 - create html Post page:
   - Gathered free stock photos to use for blog posts list from [Pexels.com](https://www.pexels.com/search/star%20wars/)
   - Dummy text used for post text: [Star Wars Ipsum](https://nerfherderipsum.com/)
+
+## 2/12/24 -Summary:
+- **Script.js**: Added comments() and createAccount() functions:
+  - ***createAccount*** validates user input after clicking create account button. then redirects user to login page if all conditions are met
+  - ***comments*** adds user's comments typed in textArea tag and creates new <p> tag with user text content only if textarea value is not empty string

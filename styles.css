@@ -143,11 +143,11 @@ footer{
 
 /* body */
 #login-body{
-grid-template-areas: 
-    "banner banner banner banner"
-    "nav nav nav nav"
-    ". main main ."
-    "footer footer footer footer"
+    grid-template-areas: 
+        "banner banner banner banner"
+        "nav nav nav nav"
+        ". main main ."
+        "footer footer footer footer"
 ;
 }
 
@@ -207,30 +207,55 @@ a.blogs{
 
 /* Blogs HTML */
 #blogs-body{
+    grid-template-rows: 100px 70px 4fr 1fr 70px;
     grid-template-areas: 
     "banner banner banner banner"
     "nav nav nav nav"
     "main main aside aside"
+    "comments comments aside aside"
     "footer footer footer footer";
+}
+.comments{
+    grid-area: comments;
 }
 aside{
     grid-area: aside;
 }
 #articles-sidebar{
     background-color: var(--bg-color);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "title"
+        "article1"
+        "article2"
+        "article3";
+    /* flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; */
+}
+#articles-sidebar h5{
+    grid-area: title;
+}
+section.one{
+    grid-area: article1;
+}
+section.two{
+    grid-area: article2;
+}
+section.three{
+    grid-area: article3;
 }
 .articles{
-    display: inherit;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 .aside-img{
     width: 90%;
     max-width: 200px;
+    max-height: 200px;
 }
 #blog-container{
     margin: 0px;
@@ -248,8 +273,18 @@ aside{
 .articles{
     border: solid black 1px;
 }
+#article-content-container p{
+    padding: 0px 15px;
+    width: 90%;
+}
+.comments{
+    margin-top: 10px;
+    padding-top: 15px;
+    background-color:rgb(14, 55, 106);
+}
 h6{
     text-align: center;
     margin: 0px;
 }
+
 
