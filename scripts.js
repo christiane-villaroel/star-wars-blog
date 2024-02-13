@@ -53,9 +53,9 @@ function createAccount(){
 
 function comments(){
     let newComment = document.getElementById('textArea');
-    console.log(newComment.value);
     if(newComment.value !== ""){
-        document.getElementById("comment-section").innerHTML+=`<p>newComment</p>`;
+        document.getElementById("comment-section").innerHTML+=`<p>${newComment.value}</p>`;
+        newComment.value="";
     }else{
         
         newComment.placeholder="Please enter your comments here before clicking post comment"

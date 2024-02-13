@@ -118,7 +118,6 @@ nav .nav-menu{
     color: var(--banner-color);
     width: 85%;
     padding: 10px;
-    margin-top: 10px;
 }
 
 
@@ -136,8 +135,28 @@ footer{
     align-self: center;
 }
 /* home page */
-
-
+#homepage{
+    grid-template-areas: 
+    "banner banner banner banner"
+    "nav nav nav nav"
+    "main main aside aside"
+    "footer footer footer footer"
+;
+}
+aside{
+    grid-area: aside;
+}
+main{
+    grid-area: main;
+}
+#home-container{
+    width: 100%;
+    height: 100%;
+}
+#home-container .para-text, #home-container ul{
+    padding: 0px 15px;
+    width: 90%;
+}
 
 /* login page */
 
@@ -223,17 +242,9 @@ aside{
 }
 #articles-sidebar{
     background-color: var(--bg-color);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-        "title"
-        "article1"
-        "article2"
-        "article3";
-    /* flex-direction: column;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around; */
 }
 #articles-sidebar h5{
     grid-area: title;
@@ -263,6 +274,7 @@ section.three{
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 .blogs-img{
    width: 250px;
@@ -277,14 +289,22 @@ section.three{
     padding: 0px 15px;
     width: 90%;
 }
+.articles h6{
+    font-family: "Days One", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+}
 .comments{
-    margin-top: 10px;
-    padding-top: 15px;
+    padding: 15px 10px;
     background-color:rgb(14, 55, 106);
+}
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
 }
 h6{
     text-align: center;
     margin: 0px;
 }
-
-
