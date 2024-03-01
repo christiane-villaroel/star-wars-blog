@@ -78,3 +78,52 @@ source : [Jura Font](https://fonts.google.com/selection/embed)
 - *comment()*-> JS comment function created and edited to add new comments created by user in <textarea></textarea> input after clicking new comment. 
 ### SideNotes: 
 - More changes needed to make webpages more responsive and need to fix design of <aside> side bar design.
+
+## 2/29/2024:
+Instead of hard coding each html section (Header, Footer, Article etc... ), I will be using Custom Elements to separate each section into components.
+
+After researching best way to embed html files into other html file this seems the most promising. 
+Also this reminds of Reactjs components, which makes a lot of sense since React is a JS library.
+
+**Articles used to learn more about custom elements:**
+- [freeCodeCamp](https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/)
+- [MDN Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)
+
+### Custom Element Header.js:
+class Header extends HTMLElement{
+    constructor(){
+        super();
+    }
+    connectedCallback(){
+        this.innerHTML = `
+        <header>
+        <nav>
+            <ul class="nav-menu">
+                <li id="nav-login" class="link-containers jura">
+                    <a href="login.html"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
+                </li>
+                <li class="link-containers jura">
+                    <a href="#"> Sign-Up</a>
+                </li>
+                <li class="link-containers jura">
+                    <a href="home.html">Home</a>
+                </li>
+                <li class="link-containers jura">
+                    <a href="#">Posts</a>
+                </li>
+            </ul>
+        </nav>
+        `
+    }
+}
+customElements.define("header-component",Header)
+
+1) Defining Custom Element
+- ``class Header extends HTMLElement{
+    constructor(){
+        super();
+    }``
+    - First create a class with the name Header that extends the HTML element.
+    - *Class* - classes are a template for creating objects. In between the {} we define the class members.
+    - *Constructor()* a method for creating and initializing an object created with a class.
+      - It is a method in a Class that is automatically called when a new instance of the class is created. It is used for initializing the object instance of that class.

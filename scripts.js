@@ -63,3 +63,5 @@ function comments(){
     }
 }
 
+const footerTemplate = document.getElementById('header-template');
+        document.body.appendChild(footerTemplate.content);
