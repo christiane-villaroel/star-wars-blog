@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body id="homepage" >
+        <?php include 'components/header.php';?>
         <main>
             <div id="home-container" class="main-content-container" >
                 <h2 class="days-one">Welcome</h2>

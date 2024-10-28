@@ -10,29 +10,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 
+           <!-- Component Scripts -->
+           <script src="components/header.js" type="text/javascript" defer></script>
+           <script src="components/banner.js" type="text/javascript" defer></script>
+           <script src="components/footer.js" type="text/javascript" defer></script>
+           
         <title>Star Wars Blog</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body id="posts-body">
-        <header class="banner">
-            <h1>Star Wars Fan Blog</h1>
-        </header>
-        <nav>
-            <ul class="nav-menu">
-                <li id="nav-login" class="link-containers jura">
-                    <a href="login.html"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
-                </li>
-                <li class="link-containers jura">
-                    <a href="#"> Sign-Up</a>
-                </li>
-                <li class="link-containers jura">
-                    <a href="home.html">Home</a>
-                </li>
-                <li class="link-containers jura">
-                    <a href="#">Posts</a>
-                </li>
-            </ul>
-        </nav>
+        <banner-component class="banner"></banner-component>
+       <header-component class="nav"></header-component>
         <main>
            <h2>Posts</h2>
            <div>
@@ -65,11 +53,7 @@
             </section>
            </div>
         </main>
-        <footer>
-            <small class="copyright jura">
-                &copy; Copyright Christiane Villaroel
-            </small>
-        </footer>
+        <footer-component class="footer"></footer-component>
         <script src="scripts.js">
 
         </script>
