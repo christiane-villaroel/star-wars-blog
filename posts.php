@@ -10,22 +10,22 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 
-           <!-- Component Scripts -->
-           <script src="components/header.js" type="text/javascript" defer></script>
-           <script src="components/banner.js" type="text/javascript" defer></script>
-           <script src="components/footer.js" type="text/javascript" defer></script>
+        <!-- Component Scripts -->
+        <script src="header.js" type="text/javascript" defer></script>
+        <script src="components/banner.js" type="text/javascript" defer></script>
+        <script src="components/footer.js" type="text/javascript" defer></script>
            
         <title>Star Wars Blog</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body id="posts-body">
-        <banner-component class="banner"></banner-component>
+       <banner-component class="banner"></banner-component>
        <header-component class="nav"></header-component>
         <main>
            <h2>Posts</h2>
            <div>
             <section class="blogs">
-                <a href="blog-posts/blog-1.html" class="blogs blog-lists-link">
+                <a href="blog-posts/blog-1.php" class="blogs blog-lists-link">
                     <img src="img/first-order-trooper.jpg" alt="first order trooper" class="posts-img">
                 <div>
                     <h3>Star Wars Galaxy Edge Review</h3>

@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 
         <!-- Component Scripts -->
-        <script src="components/header.js" type="text/javascript" defer></script>
+        <script src="header.js" type="text/javascript" defer></script>
         <script src="components/banner.js" type="text/javascript" defer></script>
         <script src="components/footer.js" type="text/javascript" defer></script>
          
