@@ -31,7 +31,7 @@
                     We Cover a wide range of  content
                     surrounding Star Wars such as ...
                 </p>
-                <ul class="jura">
+                <ul class="jura list">
                     <li>Movie News</li>
                     <li>Telvision</li>
                     <li>Latest Comics</li>

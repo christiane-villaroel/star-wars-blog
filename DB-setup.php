@@ -10,21 +10,27 @@ $dbname = "blog";
 
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password,$dbname);
+$conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 if ($conn) {
-    echo "Database created successfully";
+    echo "Connected successfully";
   }
-/* $sql = "CREATE DATABASE myDB";
+
+// Create database
+$sql = "CREATE DATABASE IF NOT EXISTS blog";
 if (mysqli_query($conn, $sql)) {
-  echo "Database created successfully";
+  echo "<br/>$dbname Database created successfully"; 
 } else {
   echo "Error creating database: " . mysqli_error($conn);
-} */
+} 
+
+// sql to create table
+//$sql = "CREATE TABLE IF NOT EXISTS users ()
+
 
 /* $sqlQuery = '
 insert into users(username,email,password)
@@ -36,14 +42,14 @@ if(mysqli_query($conn,$sqlQuery)){
     echo "Error " .$ql . "<br/>" . mysqli_error($conn);
 } */
 
-$sqlQuery = "INSERT INTO MyGuests (firstname, lastname, email)
+/* $sqlQuery = "INSERT INTO MyGuests (firstname, lastname, email)
 VALUES ('John', 'Doe', 'john@example.com')";
 
 if (mysqli_query($conn, $sqlQuery)) {
   echo "New record created successfully";
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+} */
 
 
 mysqli_close($conn);

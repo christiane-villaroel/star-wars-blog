@@ -4,6 +4,7 @@ const user = {
     loggedIn:false,
 }
 function validate (){
+    let validAccount = false;
     let username = document.getElementById("username");
     let password = document.getElementById("password");
     if(username.value==""){
@@ -18,9 +19,10 @@ function validate (){
     }else if(password.value.length<8){
         alert("Password must be 8 or more characters long. Please try again.")
         password.focus();
+    }else{
+        validAccount = true;
     }
-
-
+    return validAccount;
 }
 
 
@@ -47,8 +49,9 @@ function createAccount(){
     }
    if(validAccount){
     localStorage.setItem("name",document.getElementById("new-user").value);
-    window.location.replace("login.html")
+    //window.location.replace("login.html")
     }
+    return validAccount;
 }
 
 function comments(){

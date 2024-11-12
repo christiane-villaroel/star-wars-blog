@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +27,17 @@
         
         <main class="login-main">
             <div class="form-container jura" id="logged-in">
-                <form name="loginForm">
+                    <?php
+                        if (isset($_SESSION["error"])) {
+                            echo "<p class='error-message'>" . $_SESSION["error"] . "</p>";
+                            unset($_SESSION["error"]);
+                        }
+                        if (isset($_SESSION["success"])) {
+                            echo "<p class='success-message'>" . $_SESSION["success"] . "</p>";
+                            unset($_SESSION["success"]);
+                        }
+                    ?>
+                <form name="loginForm" method="post" action="login-process.php">
                     <h2 class="days-one">Login</h2>
                     <div>
                         <label for="username">Username:</label>
@@ -36,7 +49,7 @@
                         <p id="password-length"><i>Passwords must be 8 characters or more</i></p>
                     </div>
                     <div>
-                        <button type="submit" id="login-btn" value="button" onclick="validate()">Login</button>
+                        <button type="submit" id="login-btn" value="button" onclick="return validate()" name="login">Login</button>
                     </div>
                 </form>
             </div>
