@@ -1,3 +1,30 @@
+<?php
+    session_start();
+    include 'db.php';
+    $keyword = "";
+    function displayPost(){
+        $query="SELECT * FROM blogs";
+        global $conn;
+        $posts = mysqli_query($conn, $query);
+        if(mysqli_num_rows($posts)>0){
+            $articles = mysqli_fetch_assoc($posts);
+            while ($a <= 10) {
+                # code...
+            }
+
+        }
+    }
+
+    function search(){
+
+        if(isset($_POST['search'])){
+            $keyword = $_POST['search'];
+            $query = "SELECT title from blogs";
+            
+            return $keyword;
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,12 +51,25 @@
         <main>
            <h2>Posts</h2>
            <div>
+                <form  method="post">
+                   <input type="search" name="search" id="search" placeholder="search"> 
+                   <button type="submit" name ="search-btn" onclick="search()">Search</button>
+                </form>
+                <?php
+                    if(isset($_POST['search-btn'])){
+                        echo"<p>" . search() ."</P>";
+                    }
+                ?>
+                
+           </div>
+           <div>
             <section class="blogs">
                 <a href="blog-posts/blog-1.php" class="blogs blog-lists-link">
                     <img src="img/first-order-trooper.jpg" alt="first order trooper" class="posts-img">
                 <div>
-                    <h3>Star Wars Galaxy Edge Review</h3>
-                    <p class="blog-text jura">Grand admiral thrawn princess leia c-3po jabba the hutt core worlds ahsoka tano republic protocol. </p>
+                    <?php
+
+                    ?>
                 </div>
                 </a>
            </section>

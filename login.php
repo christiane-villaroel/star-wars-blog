@@ -49,7 +49,7 @@
                         <p id="password-length"><i>Passwords must be 8 characters or more</i></p>
                     </div>
                     <div>
-                        <button type="submit" id="login-btn" value="button" onclick="return validate()" name="login">Login</button>
+                        <button type="submit" id="login-btn" value="login" onclick="return validate()" name="login">Login</button>
                     </div>
                 </form>
             </div>

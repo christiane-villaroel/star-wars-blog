@@ -5,7 +5,7 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];  // Re-hash password for security
+    $password = $_POST['password'];  
 
     $sql = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);

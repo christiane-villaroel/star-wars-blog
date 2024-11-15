@@ -4,7 +4,7 @@
  
     
 
-    if (isset($_POST['edit'])) {
+    if (isset($_POST['id'])) {
         $id = $_POST['id'];
 
         $sql = "SELECT * FROM users WHERE id = ?";

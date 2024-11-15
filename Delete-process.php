@@ -1,10 +1,7 @@
 <?php
     session_start();
     // Create connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "BHJoV3XA48B#";
-    $dbname = "blog";
+    include 'db.php';
     
     
     // Create connection

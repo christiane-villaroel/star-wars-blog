@@ -3,26 +3,31 @@
 
     if (isset($_POST['login'])) {
         // Create connection
-        $servername = "localhost";
-        $username = "root";
-        $password = "BHJoV3XA48B#";
-        $dbname = "blog";
-        
-        
-        // Create connection
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-        
-        // Check connection
-        if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
-        }
+        include 'db.php';
         
 
-        $sql = "SELECT username, password FROM users WHERE username = '" . $_POST['username'] . "' AND password = '" . $_POST['password'] . "'";
+        $sql = "SELECT username, password, userType FROM users WHERE username = '" . $_POST['username'] . "' AND password = '" . $_POST['password'] . "'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
-            $_SESSION["success"] = "Login successful";
-            header("Location: login.php");
+            $row = mysqli_fetch_assoc($result);
+
+            
+            switch ($row["userType"]) {
+                case 'admin':
+                    $_SESSION["success"]="Admin User Log in Successful";
+                    header('Location: view.php');
+                    break;
+                case 'blogger':
+                    $_SESSION['username']=$row["username"];
+
+                    header("Location: Dashboard.php");
+                    break;
+                
+                default:
+                $_SESSION["error"] = "username or password failed";
+                    header("Location: login.php ");
+                    break;
+            }
         } else {
             $_SESSION["error"] = "Invalid username or email";
             header("Location: login.php");

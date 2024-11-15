@@ -341,6 +341,10 @@ h6{
     color: red;
     font-size: 1.5rem;
     text-align: center;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 8px;
+    border-style: solid 1px white;
 }
 
 /* Success Message */
@@ -349,4 +353,9 @@ h6{
     color: green;
     font-size: 1.5rem;
     text-align: center;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 8px;
+    border-style: solid 1px white;
+
 }

@@ -25,8 +25,8 @@ if (isset($_POST['submit'])) {
         header("Location: sign-up.php");
     } else
     {
-        $sql = "INSERT INTO users (username, email, password)
-        VALUES ('$username', '$email', '$password')";
+        $sql = "INSERT INTO users (username, email, password,userType)
+        VALUES ('$username', '$email', '$password','blogger')";
         if (mysqli_query($conn, $sql)) {
             $_SESSION["success"] = "New user account created successfully";
             header("Location: login.php");
