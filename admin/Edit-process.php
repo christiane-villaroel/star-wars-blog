@@ -1,6 +1,7 @@
 <?php
-    include 'db.php';
     session_start();
+    $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
+    include ''. $filePath . 'db.php';
  
     
 
@@ -23,9 +24,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include ''. $filePath . 'linkHead.php';?>
     <title>Edit User</title>
 </head>
 <body>
+    
     <h2>Edit User</h2>
     <form action="update-process.php" method="post">
         <input type="hidden" name="id" value="<?php echo $user['id']; ?>">

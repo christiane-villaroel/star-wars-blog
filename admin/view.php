@@ -1,18 +1,17 @@
 <?php
     session_start();
-     // Create connection
-     
-     include 'db.php';
+    $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
+    include ''. $filePath . 'db.php';
 ?>
 <!DOCTYPE html>
 <html >
 <head>
-    <?php include 'linkHead.php';?>
+<?php include ''. $filePath . 'linkHead.php';?>
     <title>View</title>
 </head>
 <body id="view-body">
-    <banner-component class="banner"></banner-component>
-    <header-component class="nav"></header-component>
+    <?php include ''.$filePath.'banner.html';?>
+    <?php include ''.$filePath.'nav.php';?>
     <main>
        <h2 class="days-one" id="view-header">View</h2>
        <div id="view-container">
@@ -63,7 +62,7 @@
         </table>
        </div>
     </main>
-    <footer-component class="footer"></footer-component>
+    <?php include $filePath.'footer.html';?>
     <script src="scripts.js"></script>
     
 </body>

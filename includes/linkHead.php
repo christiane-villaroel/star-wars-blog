@@ -10,4 +10,6 @@
 <script src="header.js" type="text/javascript" defer></script>
 <script src="components/banner.js" type="text/javascript" defer></script>
 <script src="components/footer.js" type="text/javascript" defer></script>
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="/Blog/star-wars-blog/static/css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

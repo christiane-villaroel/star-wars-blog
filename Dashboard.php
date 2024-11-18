@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'db.php'; 
+$filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
+include ''. $filePath . 'db.php';
 // Check if user is logged in
 if (!isset($_SESSION['username'])) {
     header("Location: login.php"); // Redirect to login if not logged in
@@ -14,14 +15,12 @@ $username = $_SESSION['username'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include ''. $filePath . 'linkHead.php';?>
     <title>User Dashboard</title>
-    <?php include 'linkHead.php'?>
 </head>
 <body>
-    <banner-component class="banner"></banner-component>
-    <header-component class="nav"></header-component>
+    <?php include ''.$filePath.'banner.html';?>
+    <?php include ''.$filePath.'nav.php';?>
     
     <main class="dashboard-main">
         <h2 class="days-one">Welcome, <?php echo htmlspecialchars($username); ?>!</h2>
@@ -37,6 +36,6 @@ $username = $_SESSION['username'];
         </section>
     </main>
 
-    <footer-component class="footer"></footer-component>
+    <?php include $filePath.'footer.html';?>
 </body>
 </html>

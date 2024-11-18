@@ -1,17 +1,19 @@
 <?php
     session_start();
-    include 'db.php';
+    $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
+    include ''. $filePath . 'db.php';
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include 'linkHead.php'?>
+        <?php include ''. $filePath . 'linkHead.php';?>
         <title>Star Wars Blog</title>
       
     </head>
     <body id="homepage" >
-        <banner-component class="banner"></banner-component>
-        <header-component class="nav"></header-component>
+        <?php include ''.$filePath.'banner.html';?>
+        <?php include ''.$filePath.'nav.php';?>
+
         <main>
             <div id="home-container" class="main-content-container" >
                 <h2 class="days-one">Welcome</h2>
@@ -62,7 +64,7 @@
                 
             </div>
         </main>
-        <footer-component class="footer"></footer-component>
+        <?php include $filePath.'footer.html';?>
         <script src="scripts.js">
         </script>
     </body>

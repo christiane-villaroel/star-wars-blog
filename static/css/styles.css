@@ -34,7 +34,7 @@ body{
 .banner{
     grid-area: banner;
 }
-.nav{
+#nav-container{
     grid-area: nav;
 }
 main{
@@ -43,7 +43,7 @@ main{
 aside{
     grid-area: aside;
 }
-.footer{
+#footer-container{
     grid-area: footer;
 }
 /* fonts */
@@ -195,7 +195,12 @@ main{
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+    color: black;
 }
+.form-container form > h2{
+    color: black;
+}
+
 /* POST's Page */
 #posts-body{
     grid-template-areas: 
