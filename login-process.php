@@ -31,6 +31,7 @@
         } else {
             $_SESSION["error"] = "Invalid username or email";
             header("Location: login.php");
+            exit();
         }
         mysqli_close($conn); 
     } 

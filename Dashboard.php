@@ -17,7 +17,7 @@ $username = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
-    <?php include 'llinkHead.php'?>
+    <?php include 'linkHead.php'?>
 </head>
 <body>
     <banner-component class="banner"></banner-component>

@@ -2,12 +2,7 @@
 session_start();
 if (isset($_POST['submit'])) {
     // Create connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "BHJoV3XA48B#";
-    $dbname = "blog";
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-
+    include 'db.php';
     $username = $_POST['new-user'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -15,9 +10,7 @@ if (isset($_POST['submit'])) {
     
    
     
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+   
     $sql = "SELECT * FROM users WHERE username='$username' AND email='$email'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {

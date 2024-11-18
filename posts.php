@@ -1,49 +1,39 @@
 <?php
     session_start();
     include 'db.php';
-    $keyword = "";
-    function displayPost(){
-        $query="SELECT * FROM blogs";
+    
+    function searchResult() {
         global $conn;
-        $posts = mysqli_query($conn, $query);
-        if(mysqli_num_rows($posts)>0){
-            $articles = mysqli_fetch_assoc($posts);
-            while ($a <= 10) {
-                # code...
+        $keyword = htmlspecialchars($_POST['search']);
+        $query = "SELECT title, body FROM posts WHERE title LIKE '%$keyword%' OR body LIKE '%$keyword%'";
+        $result = mysqli_query($conn, $query);
+        if (mysqli_num_rows($result) > 0) {
+            while ($post = mysqli_fetch_assoc($result)) {
+                $previewArticle = substr($post["body"], 0, 100);
+                echo '
+                <section class="blogs">
+                    <a href="" class="blogs blogs-lists-link">
+                        <img src="img/sw-legos.jpg" alt="" class="posts-img">
+                        <div>
+                            <h3>' . $post["title"] . '</h3>
+                            <p class="blog-text jura">' . $previewArticle . '</p>
+                        </div>
+                    </a>
+                </section>';
             }
-
+        }
+        else {
+            echo"<p>No Results found</p>";
         }
     }
-
-    function search(){
-
-        if(isset($_POST['search'])){
-            $keyword = $_POST['search'];
-            $query = "SELECT title from blogs";
-            
-            return $keyword;
-        }
-    }
+  
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-
-        <!-- Component Scripts -->
-        <script src="header.js" type="text/javascript" defer></script>
-        <script src="components/banner.js" type="text/javascript" defer></script>
-        <script src="components/footer.js" type="text/javascript" defer></script>
-           
+      <?php include 'linkHead.php';?>
         <title>Star Wars Blog</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+     
     </head>
     <body id="posts-body">
        <banner-component class="banner"></banner-component>
@@ -51,47 +41,40 @@
         <main>
            <h2>Posts</h2>
            <div>
-                <form  method="post">
+                <form method="post">
                    <input type="search" name="search" id="search" placeholder="search"> 
-                   <button type="submit" name ="search-btn" onclick="search()">Search</button>
+                   <button type="submit" name="search-btn">Search</button>
                 </form>
-                <?php
-                    if(isset($_POST['search-btn'])){
-                        echo"<p>" . search() ."</P>";
-                    }
-                ?>
-                
            </div>
-           <div>
-            <section class="blogs">
-                <a href="blog-posts/blog-1.php" class="blogs blog-lists-link">
-                    <img src="img/first-order-trooper.jpg" alt="first order trooper" class="posts-img">
-                <div>
-                    <?php
+          <?php
+            if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+                if (isset($_POST["search"])) {
+                    searchResult();
+                }
+            }
 
-                    ?>
-                </div>
-                </a>
-           </section>
-           <section class="blogs">
-                <a href="" class="blogs blogs-lists-link">
-                    <img src="img/sw-legos.jpg" alt="" class="posts-img">
-                <div>
-                    <h3>Best Lego Star Wars Collection</h3>
-                    <p class="blog-text jura">Jango fett grand moff tarkin mid rim resistance new republic ezra bridger trade federation mace windu.</p>
-                </div>
-                </a>
-            </section>
-            <section class="blogs">
-                <a href="" class="blogs blog-lists-link">
-                    <img src="img/vador-helmet.jpg" alt="" class="posts-img">
-                <div>
-                    <h3>Original Vador Helmet Found</h3>
-                    <p class="blog-text jura"> Galactic republic jar jar binks new republic ezra bridger darth vader ben solo kylo ren hera syndulla.</p>
-                </div>
-                </a>
-            </section>
-           </div>
+            else{
+                $sql = "SELECT title, body FROM posts ORDER BY created_at LIMIT 3;";
+                $result = mysqli_query($conn,$sql);
+
+                if (mysqli_num_rows($result)>0){
+                    while ($post = mysqli_fetch_assoc($result)) {
+                        $previewArticle = substr($post["body"],0,100);
+                        echo '
+                        <section class="blogs">
+                                <a href="" class="blogs blogs-lists-link">
+                                <img src="img/sw-legos.jpg" alt="" class="posts-img">
+                            <div>'.
+                                '<h3>'. $post["title"] .'</h3>'.
+                                '<p class="blog-text jura">'. $previewArticle .'</p>'.
+                            '</div>
+                            </a>
+                        </section>';
+                    }
+                }
+            }
+          ?>  
+           
         </main>
         <footer-component class="footer"></footer-component>
         <script src="scripts.js">

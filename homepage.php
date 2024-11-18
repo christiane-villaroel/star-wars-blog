@@ -1,21 +1,13 @@
+<?php
+    session_start();
+    include 'db.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
-        
-        <!-- Component Scripts -->
-        <script src="header.js" type="text/javascript" defer></script>
-        <script src="components/banner.js" type="text/javascript" defer></script>
-        <script src="components/footer.js" type="text/javascript" defer></script>
+        <?php include 'linkHead.php'?>
         <title>Star Wars Blog</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+      
     </head>
     <body id="homepage" >
         <banner-component class="banner"></banner-component>
@@ -35,7 +27,38 @@
                     <li>Movie News</li>
                     <li>Telvision</li>
                     <li>Latest Comics</li>
+                    <li>Video Games</li>
                 </ul>
+
+                <div>
+                <h3 class="days-one">We Appreciate Your Feedback!</h3>
+                <p class="para-text jura">Feel free to let us know how we can better improve your experience here </p>
+                <?php
+                    if(isset($_SESSION['success'])){
+                        echo"<p class='success-message'>". $_SESSION['feedback-msg'] ."</p>";
+                        unset($_SESSION['success']);
+                    }
+                    if (isset($_SESSION['error'])) {
+                        echo"<p class='error-message'>".$_SESSION['error']."</p>";
+                        unset($_SESSION['error']);
+                    }
+                ?>
+                <form method="post" action="customerFeedback-process.php" class="form-container">
+                    <div class="jura">
+                    <label for="name">Your Name:</label>
+                    <input type="text" name="name" id="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="feedback">Your Feedback</label>
+
+                    <textarea name="feedback" id="feedback" required>
+
+                    </textarea>
+                    <input type="submit" value="Send Feedback" name="feedback-btn">
+                    </div>
+                </form>
+            </div>
                 
             </div>
         </main>

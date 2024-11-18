@@ -3,14 +3,6 @@
     // Create connection
     include 'db.php';
     
-    
-    // Create connection
-     $conn = mysqli_connect($servername, $username, $password, $dbname);
-    
-    // Check connection
-    if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-    }
     if (isset($_POST['delete'])) {
         delete($_POST['id']);
     }
@@ -24,6 +16,7 @@
         $stmt->close();
         $conn->close();
         header("Location: view.php");
+        exit();
     }
 
 
