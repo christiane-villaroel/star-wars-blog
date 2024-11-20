@@ -1,17 +1,16 @@
 <nav id="nav-container">
     <ul class="nav-menu">
-        <li id="nav-login" class="link-containers jura">
-            <a href="login.php"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
-        </li>
-        <li class="link-containers jura">
-            <a href="sign-up.php"> Sign-Up</a>
-        </li>
-        <li class="link-containers jura">
-            <a href="homepage.php">Home</a>
-        </li>
-        <li class="link-containers jura">
-            <a href="posts.php">Posts</a>
-        </li>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <!-- Navigation for signed-in users -->
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        <?php else: ?>
+            <!-- Navigation for non-signed-in users -->
+            <li><a href="login.php">Login</a></li>
+            <li><a href="sign-up.php">Sign Up</a></li>
+            <li><a href="home.php">Home</a></li>
+        <?php endif; ?>
     </ul>
 </nav>
 

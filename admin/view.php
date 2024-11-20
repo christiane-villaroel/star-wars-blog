@@ -1,7 +1,6 @@
 <?php
     session_start();
-    $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
-    include ''. $filePath . 'db.php';
+   include '../config.php';
 ?>
 <!DOCTYPE html>
 <html >
@@ -15,6 +14,16 @@
     <main>
        <h2 class="days-one" id="view-header">View</h2>
        <div id="view-container">
+            <?php
+                if (isset($_SESSION["error"])) {
+                    echo "<p class='error-message'>" . $_SESSION["error"] . "</p>";
+                    unset($_SESSION["error"]);
+                }
+                if (isset($_SESSION["success"])) {
+                    echo "<p class='success-message'>" . $_SESSION["success"] . "</p>";
+                    unset($_SESSION["success"]);
+                }
+            ?>
         <table class="user-table jura">
             <tr>
                 <th>Username</th>
@@ -38,7 +47,7 @@
                                 . $row["password"] . 
                                 "</td>
                                 <td>
-                                    <form action='delete-process.php' method='post'>
+                                    <form action='Delete-process.php' method='post'>
                                         <input type='hidden' name='id' value='" . $row["id"] . "'>
                                         <button type='submit' name='delete' value='delete'>Delete</button>
                                     </form>

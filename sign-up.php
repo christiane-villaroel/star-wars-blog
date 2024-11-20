@@ -1,18 +1,17 @@
 <?php
     session_start();
-    $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
-    include ''. $filePath . 'db.php';
+   include_once 'config.php';
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include ''. $filePath . 'linkHead.php';?>
+        <?php include 'includes/linkHead.php'?>
         <title>Login</title>
-       
+        <link rel="stylesheet" href="<?php echo STATIC_URL;?>styles.css">
     </head>
     <body id="login-body" >
-    <?php include ''.$filePath.'banner.html';?>
-    <?php include ''.$filePath.'nav.php';?>
+    <?php include 'banner.html';?>
+    <?php include 'nav.php';?>
         
         <main class="login-main">
             <div class="form-container jura" id="logged-in">
@@ -56,7 +55,7 @@
             </div>
         </main>
         <?php include $filePath.'footer.html';?>
-        <script src="scripts.js">
+        <script src="<?php echo STATIC_URL;?>scripts.js" defer>
            
         </script>
     </body>

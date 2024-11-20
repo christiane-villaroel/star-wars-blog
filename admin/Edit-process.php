@@ -28,8 +28,9 @@
     <title>Edit User</title>
 </head>
 <body>
-    
-    <h2>Edit User</h2>
+    <?php include $filePath."banner.html"?>
+   <main>
+   <h2>Edit User</h2>
     <form action="update-process.php" method="post">
         <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
         <label>Username: </label>
@@ -40,5 +41,6 @@
         <input placeholder="Enter password" type="password" name="password" required><br>
         <button type="submit" name="update">Update</button>
     </form>
+   </main>
 </body>
 </html>

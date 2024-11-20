@@ -1,8 +1,9 @@
 <?php
 session_start();
+include 'config.php';
 if (isset($_POST['submit'])) {
     // Create connection
-    include 'db.php';
+   
     $username = $_POST['new-user'];
     $email = $_POST['email'];
     $password = $_POST['password'];

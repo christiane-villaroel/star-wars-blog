@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '/xampp/htdocs/Blog/star-wars-blog/includes/db.php';
 session_start();
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
@@ -13,7 +13,7 @@ if (isset($_POST['update'])) {
 
     if ($stmt->execute()) {
         $_SESSION['success'] = "User updated successfully.";
-        header("Location: view.php");
+        header("Location: admin/view.php");
         exit;
     } else {
         echo "Error updating user: " . $stmt->error;

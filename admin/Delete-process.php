@@ -1,7 +1,7 @@
 <?php
     session_start();
     // Create connection
-    include 'db.php';
+    include '/xampp/htdocs/Blog/star-wars-blog/includes/db.php';
     
     if (isset($_POST['delete'])) {
         delete($_POST['id']);
@@ -15,7 +15,7 @@
         $_SESSION["success"] = "User deleted successfully";
         $stmt->close();
         $conn->close();
-        header("Location: view.php");
+        header("Location: admin/view.php");
         exit();
     }
 

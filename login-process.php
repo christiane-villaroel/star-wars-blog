@@ -1,11 +1,9 @@
 <?php
     session_start();
+    //$filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
+    include "/xampp/htdocs/Blog/star-wars-blog/includes/db.php";
 
-    if (isset($_POST['login'])) {
-        // Create connection
-        include 'db.php';
-        
-
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "SELECT username, password, userType FROM users WHERE username = '" . $_POST['username'] . "' AND password = '" . $_POST['password'] . "'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
@@ -14,12 +12,14 @@
             
             switch ($row["userType"]) {
                 case 'admin':
+                    $_SESSION['user_id']=$row['id'];
+                    $_SESSION['username']=$row["username"];
                     $_SESSION["success"]="Admin User Log in Successful";
-                    header('Location: view.php');
+                    header('Location: admin/view.php');
                     break;
                 case 'blogger':
+                    $_SESSION['user_id']=$row['id'];
                     $_SESSION['username']=$row["username"];
-
                     header("Location: Dashboard.php");
                     break;
                 
