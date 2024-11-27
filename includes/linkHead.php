@@ -1,3 +1,4 @@
+<?php include 'config.php';?>
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +11,7 @@
 <script src="header.js" type="text/javascript" defer></script>
 <script src="components/banner.js" type="text/javascript" defer></script>
 <script src="components/footer.js" type="text/javascript" defer></script>
-<link rel="stylesheet" type="text/css" href="/Blog/star-wars-blog/static/css/styles.css">
+
+<link rel="stylesheet" href="styles.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

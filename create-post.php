@@ -1,49 +1,33 @@
 <?php
     session_start();
-    $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
-    include ''. $filePath . 'db.php';
+    include_once 'config.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include INCLUDES_PATH . 'linkHead.php'; ?>
+    <link rel="stylesheet" href="/styles.css">
     <title>Add Posts</title>
 </head>
 <body>
-<?php include ''.$filePath.'banner.html';?>
-<nav id="nav-container">
-    <ul class="nav-menu">
-        <li id="nav-login" class="link-containers jura">
-            <a href="login.php"> <img id="login-icon" src="img/person-fill-svgrepo-com.svg"> Login </a>
-        </li>
-        <li class="link-containers jura">
-            <a href="../star-wars-blog/sign-up.php"> Sign-Up</a>
-        </li>
-        <li class="link-containers jura">
-            <a href="homepage.php">Welcome</a>
-        </li>
-        <li class="link-containers jura">
-            <a href="posts.php">Posts</a>
-        </li>
-        <li>
-            <a href="Dashboard.php">Home</a>
-        </li>
-    </ul>
-</nav>
-<main>
+    <?php include INCLUDES_PATH . 'banner.html'; ?> 
+    <?php include INCLUDES_PATH . 'nav.php'; ?> 
+
+    <main>
         <h2 class="days-one">Create a New Post</h2>
         
-       
         <?php if (isset($error)): ?>
             <p class="error-message"><?php echo $error; ?></p>
+            <?php unset($_SESSION['error']);?>
         <?php endif; ?>
         <?php if (isset($success)): ?>
             <p class="success-message"><?php echo $success; ?></p>
+            <?php unset($_SESSION['success']);?>
         <?php endif; ?>
 
-        <form action="create-post.php" method="POST" class="jura">
+        <form action="create-post-process.php" method="POST" class="jura">
+            <input type="text" name="user_id" value="<?php echo $_SESSION['user_id'];?>" hidden>
             <label for="title">Post Title:</label>
             <input type="text" id="title" name="title" placeholder="Enter the post title" required>
 
@@ -53,6 +37,7 @@
             <button type="submit" class="submit-btn">Create Post</button>
         </form>
     </main>
-    <?php include ''.$filepath . 'db.php'?>
+    <?php include INCLUDES_PATH . 'footer.html'; ?>
+    <script src="<?php echo STATIC_URL; ?>scripts.js" defer></script>
 </body>
 </html>

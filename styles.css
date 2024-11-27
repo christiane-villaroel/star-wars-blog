@@ -343,6 +343,52 @@ h6{
     text-align: center; 
     margin: 0px;
 }
+/* Dashbaord */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px; /* Increase the gap between the menu and the content */
+    justify-content: center; /* Center the entire dashboard layout */
+    padding: 20px; /* Add padding around the dashboard container */
+}
+
+.menu {
+    width: 30%; /* Increase the menu width to 30% */
+    background-color: #f4f4f4;
+    color: var(--banner-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    width: 65%; /* Increase the content width to 65% */
+    background-color: #ffffff;
+    color: var(--banner-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--banner-color);
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #007bff;
+}
+
 
 
 /* Error Message */

@@ -4,7 +4,7 @@
     include "/xampp/htdocs/Blog/star-wars-blog/includes/db.php";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $sql = "SELECT username, password, userType FROM users WHERE username = '" . $_POST['username'] . "' AND password = '" . $_POST['password'] . "'";
+        $sql = "SELECT id, username, password, userType FROM users WHERE username = '" . $_POST['username'] . "' AND password = '" . $_POST['password'] . "'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);

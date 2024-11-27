@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'db.php';
+    include_once 'config.php';
     if ($_SERVER["REQUEST_METHOD"]=='POST') {
 
         $stmt = $conn->prepare("INSERT INTO feedback (name, email, feedback) VALUES(?,?,?)");

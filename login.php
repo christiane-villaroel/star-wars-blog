@@ -1,18 +1,19 @@
 <?php
     session_start();
-    $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
-    include ''. $filePath . 'db.php';
+    /* $filePath = "/xampp/htdocs/Blog/star-wars-blog/includes/";
+    include ''. $filePath . 'db.php'; */
+    include_once 'config.php'; // Load the config file
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include ''. $filePath . 'linkHead.php';?>
+        <?php include INCLUDES_PATH . 'linkHead.php'; ?>
 
         <title>Login</title>
     </head>
     <body id="homepage" >
-        <?php include ''.$filePath.'banner.html';?>
-        <?php include ''.$filePath.'nav.php';?>
+        <?php include INCLUDES_PATH . 'banner.html'; ?> 
+        <?php include INCLUDES_PATH . 'nav.php'; ?> 
         
         <main class="login-main">
             <div class="form-container jura" id="logged-in">
@@ -46,8 +47,8 @@
                 <p id="profile"></p>
             </div>
         </main>
-        <?php include $filePath.'footer.html';?>
-        <script src="scripts.js">
+        <?php include INCLUDES_PATH . 'footer.html'; ?>
+        <script src="<?php echo STATIC_URL; ?>scripts.js" defer></script>
 
         </script>
     </body>
