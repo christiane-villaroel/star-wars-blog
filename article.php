@@ -5,7 +5,7 @@ include_once 'config.php'; // Load the config file
 if (!isset($_SESSION['username'])) {
     header("Location: login.php"); // Redirect to login if not logged in
     exit();
-}
+} 
 
 // User information from the session
 
@@ -25,13 +25,22 @@ $username = $_SESSION['username'];
     
     <main class="dashboard-main">
        <div class="dashboard-container">
-            <?php include INCLUDES_PATH . 'dashboard-menu.php';?>
+            <?php include INCLUDES_PATH .'dashboard-menu';?>
             <section class="content jura">
-                <h class="days-one">Welcome, <?php echo htmlspecialchars($username); ?></h2>
-                <p class="jura">Here is your profile Information:</p>
-                <ul class="jura">
-                    <li><strong>Username:</strong> <?php echo htmlspecialchars($username); ?></li>
-                </ul>
+                <?php
+                    $sql = "SELECT title,body,author_id FROM posts WHERE id =" . $_GET['id'];
+                    $result = mysqli_query($conn,$sql);
+                    if($_GET['id']):?>
+                        <?php if(mysqli_num_rows($result)>0):?>
+                            <?php while($row = mysqli_fetch_assoc($result)):?>
+                                <div>
+                                    <h2 class="days-one"><?php echo $row['title'];?></h2>
+                                    <p class="jura"><?php echo $row['body'];?></p>
+                                </div>
+                            <?php endwhile;?>
+                        <?php endif?>
+                <?php endif;?>
+            
             </section>
        </div>
     </main>

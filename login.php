@@ -8,7 +8,6 @@
 <html>
     <head>
         <?php include INCLUDES_PATH . 'linkHead.php'; ?>
-
         <title>Login</title>
     </head>
     <body id="homepage" >
